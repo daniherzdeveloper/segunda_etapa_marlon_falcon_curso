@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vendor_payment,access.vendor.payment,model_vendor_payment,,1,1,1,1
+access_notebook_line,access.notebook.line,model_notebook_line,,1,1,1,1
