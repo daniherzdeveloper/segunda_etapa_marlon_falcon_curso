@@ -4,7 +4,7 @@
         <record id="sequence_vendor_payment" model="ir.sequence">
             <field name="name">Vendor Payment Sequence</field>
             <field name="code">vendor.payment</field>
-            <field name="prefix">VP/</field>
+            <field name="prefix">VP/%(year)s/%(month)s/</field>
             <field name="padding">5</field>
         </record>
     </data>

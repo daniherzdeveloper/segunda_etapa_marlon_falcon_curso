@@ -5,6 +5,13 @@
         <field name="model">vendor.payment</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_loade_invoice" string="Loade" type="object" class="oe_highlight" states="draft"/>
+                    <button name="action_approve_invoice" string="Approve" type="object" class="oe_highlight" states="loaded"/>
+                    <button string="Cancel" type="object" name="action_cancel" states="draft,loaded,approved"/>
+                    
+                    <field name="state" widget="statusbar" statusbar_visible="draft,loaded,approved,downloaded,uploaded,cancelled"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -19,19 +26,43 @@
                             <field name="create_date" readonly="1"/>
                         </group>
                         <group name="right">
-                            <field name="amount"/>
+                            <field name="total_invoice_amount" widget="monetary"/>
                             <field name="created_by_user_id" />
                             <field name="description" />    
                         </group>
                     </group>
                     <notebook>
-                        <page string="Invoices">
-                            <field name="notebook_lines">
+                        <page name="Invoices" string="Invoices">
+                            <field name="notebook_lines_invoice">
                                 <tree editable="bottom">
+                                    <!-- <control>
+                                        <create name="add_line_control" string="Agregar línea"/>
+                                        <create name="add_section_control" string="Agregar una sección" />
+                                        <create name="add_note_control" string="Agregar nota" />
+                                    </control> -->
                                     <field name="move_id"/>
                                     <field name="vendor_id"/>
+                                    <field name="vendor_vat" />
                                     <field name="invoice_date" />
                                     <field name="vendor_bank" />
+                                    <field name="invoice_amount" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="Payments" string="Payments">
+                            <field name="notebook_lines_payments">
+                                <tree editable="bottom">
+                                    <!-- <control>
+                                        <create name="add_line_control" string="Agregar línea"/>
+                                        <create name="add_section_control" string="Agregar una sección" context="{'default_display_type': 'line_section'}"/>
+                                        <create name="add_note_control" string="Agregar nota" context="{'default_display_type': 'line_note'}"/>
+                                    </control> -->
+                                    <field name="account_payment_id"/>
+                                    <field name="vendor_id"/>
+                                    <field name="vendor_vat" />
+                                    <field name="vendor_bank" />
+                                    <field name="move_id" />
+                                    <field name="total_invoice_amount" />
                                 </tree>
                             </field>
                         </page>
@@ -47,6 +78,13 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name" />
+                <field name="payment_journal_id" />
+                <field name="create_date" readonly="1"/>
+                <field name="created_by_user_id" />
+                <field name="currency_id"/>
+                <field name="description" />
+                <field name="company_id" />
+                <field name="total_invoice_amount" widget="monetary"/>
             </tree>
         </field>
     </record>
