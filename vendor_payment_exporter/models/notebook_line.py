@@ -64,5 +64,6 @@ class NotebookLinePayments(models.Model):
     vendor_vat = fields.Char(string='VAT', readonly=True)
     vendor_bank = fields.Char(string='Bank Account', readonly=True)
     total_invoice_amount = fields.Float(string='Total Invoice Amount', readonly=True)
-    move_id = fields.Many2one('account.move', string='Vendor Invoice', domain=[('move_type', 'in', ('in_invoice', 'in_refund'))], readonly=True)
-
+    move_ids = fields.Many2many('account.move', string='Vendor Invoices', 
+                                domain=[('move_type', 'in', ('in_invoice', 'in_refund'))], 
+                                readonly=True)

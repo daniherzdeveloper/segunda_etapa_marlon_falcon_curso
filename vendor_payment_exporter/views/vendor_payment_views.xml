@@ -29,7 +29,8 @@
                         <group name="right">
                             <field name="total_invoice_amount" widget="monetary"/>
                             <field name="created_by_user_id" />
-                            <field name="description" />    
+                            <field name="description" />
+                            <field name="group_invoices_by_partner" />    
                         </group>
                     </group>
                     <notebook>
@@ -41,7 +42,7 @@
                                         <create name="add_section_control" string="Agregar una sección" />
                                         <create name="add_note_control" string="Agregar nota" />
                                     </control> -->
-                                    <field name="move_id"/>
+                                    <field name="move_id" />
                                     <field name="vendor_id"/>
                                     <field name="vendor_vat" />
                                     <field name="invoice_date" />
@@ -58,11 +59,11 @@
                                         <create name="add_section_control" string="Agregar una sección" context="{'default_display_type': 'line_section'}"/>
                                         <create name="add_note_control" string="Agregar nota" context="{'default_display_type': 'line_note'}"/>
                                     </control> -->
-                                    <field name="name"/>
+                                    <field name="name" />
                                     <field name="vendor_id"/>
                                     <field name="vendor_vat" />
                                     <field name="vendor_bank" />
-                                    <field name="move_id" />
+                                    <field name="move_ids" widget="many2many_tags" />
                                     <field name="total_invoice_amount" />
                                 </tree>
                             </field>
