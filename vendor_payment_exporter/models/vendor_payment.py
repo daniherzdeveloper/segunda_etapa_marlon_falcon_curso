@@ -59,8 +59,9 @@ class VendorPayment(models.Model):
 
     def add_notebook_lines_payments(self):
         payment_lines = []
+
         for invoice_line in self.notebook_lines_invoice:
-            
+
             if invoice_line.vendor_id and invoice_line.move_id:
                 payment_line_vals = {
                     'vendor_id': invoice_line.vendor_id.id,
@@ -69,8 +70,45 @@ class VendorPayment(models.Model):
                     'total_invoice_amount': invoice_line.invoice_amount,
                     'move_id': invoice_line.move_id.id,
                 }
-                print(payment_line_vals)
+                
                 payment_lines.append((0, 0, payment_line_vals))
 
         self.notebook_lines_payments = payment_lines
         
+    def payinvoice(self):
+        pay_name = []
+        invoices = self.notebook_lines_invoice.mapped('move_id')
+
+        for invoice in invoices:
+            payment_sequence = self.env['ir.sequence'].next_by_code('payment.vendor.payment')
+            payment_vals = {
+                'partner_id': invoice.partner_id.id,
+                'journal_id': self.payment_journal_id.id,
+                'amount': abs(invoice.amount_total_signed),
+                'partner_type': 'supplier',  
+                'payment_type': 'outbound',
+                'payment_method_line_id': self.env.ref('account.account_payment_method_manual_out').id,
+                'name': payment_sequence,
+            }
+
+            payment = self.env['account.payment'].create(payment_vals)
+            payment.action_post()
+            pay_name.append(payment.id)
+
+            invoice_receivable_line = invoice.line_ids.filtered(lambda line: line.credit and not line.reconciled)
+            payment_receivable_line = payment.line_ids.filtered(lambda line: line.debit and not line.reconciled)
+
+            aml_obj = self.env['account.move.line']
+            aml_obj += invoice_receivable_line 
+            aml_obj += payment_receivable_line
+            aml_obj.reconcile()
+        
+        payment_lines = []
+
+        contador = 0
+        for line_payments in self.notebook_lines_payments:
+            line_payments.name = pay_name[contador]
+            print(line_payments.name)
+            contador += 1
+        
+        self.write({'state': 'done'})

@@ -60,7 +60,7 @@ class NotebookLinePayments(models.Model):
 
     vendor_id = fields.Many2one('res.partner', string='Vendor')
     vendor_payment_id = fields.Many2one('vendor.payment', string='Vendor Payment', readonly=True, copy=False)
-    account_payment_id = fields.Many2one('account.payment', string='Account Payment', domain=[('partner_type', '=', 'supplier'), ('is_internal_transfer', '=', False)])
+    name = fields.Many2one('account.payment', string='Payment', domain=[('partner_type', '=', 'supplier'), ('is_internal_transfer', '=', False)])
     vendor_vat = fields.Char(string='VAT', readonly=True)
     vendor_bank = fields.Char(string='Bank Account', readonly=True)
     total_invoice_amount = fields.Float(string='Total Invoice Amount', readonly=True)

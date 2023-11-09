@@ -8,6 +8,7 @@
                 <header>
                     <button name="action_loade_invoice" string="Loade" type="object" class="oe_highlight" states="draft"/>
                     <button name="action_approve_invoice" string="Approve" type="object" class="oe_highlight" states="loaded"/>
+                    <button name="payinvoice" string="Done" type="object" class="oe_highlight" states="approved"/>
                     <button string="Cancel" type="object" name="action_cancel" states="draft,loaded,approved"/>
                     
                     <field name="state" widget="statusbar" statusbar_visible="draft,loaded,approved,downloaded,uploaded,cancelled"/>
@@ -57,7 +58,7 @@
                                         <create name="add_section_control" string="Agregar una sección" context="{'default_display_type': 'line_section'}"/>
                                         <create name="add_note_control" string="Agregar nota" context="{'default_display_type': 'line_note'}"/>
                                     </control> -->
-                                    <field name="account_payment_id"/>
+                                    <field name="name"/>
                                     <field name="vendor_id"/>
                                     <field name="vendor_vat" />
                                     <field name="vendor_bank" />

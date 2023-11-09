@@ -7,5 +7,12 @@
             <field name="prefix">VP/%(year)s/%(month)s/</field>
             <field name="padding">5</field>
         </record>
+
+        <record id="sequence_payment_vendor_payment" model="ir.sequence">
+            <field name="name">Payment Vendor Payment Sequence</field>
+            <field name="code">payment.vendor.payment</field>
+            <field name="prefix">PVP/%(year)s/%(month)s/</field>
+            <field name="padding">5</field>
+        </record>
     </data>
 </odoo>
