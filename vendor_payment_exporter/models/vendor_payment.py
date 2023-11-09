@@ -70,7 +70,7 @@ class VendorPayment(models.Model):
                     'total_invoice_amount': invoice_line.invoice_amount,
                     'move_id': invoice_line.move_id.id,
                 }
-                
+
                 payment_lines.append((0, 0, payment_line_vals))
 
         self.notebook_lines_payments = payment_lines
@@ -108,7 +108,6 @@ class VendorPayment(models.Model):
         contador = 0
         for line_payments in self.notebook_lines_payments:
             line_payments.name = pay_name[contador]
-            print(line_payments.name)
             contador += 1
         
         self.write({'state': 'done'})
