@@ -1,8 +1,11 @@
 {
     'name': 'User Password by API',
-    'version': '16.0',
+    'version': '17.0',
     'summary': 'Create users with API generated password',
     'author': 'daniherzdeveloper',
+    'category': 'Extra Tools',
+    'auto_install': False,
+    'sequence': 10,
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',

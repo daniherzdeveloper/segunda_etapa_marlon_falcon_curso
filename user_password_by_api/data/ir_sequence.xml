@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <record id="sequence_vendor_payment" model="ir.sequence">
+        <record id="sequence_virtual_user" model="ir.sequence">
             <field name="name">Virtual User</field>
             <field name="code">virtual.user</field>
             <field name="prefix">VU/%(year)s/%(month)s/</field>
