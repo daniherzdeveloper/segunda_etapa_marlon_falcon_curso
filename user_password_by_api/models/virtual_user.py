@@ -6,8 +6,8 @@ class VirtualUser(models.Model):
     _name = 'virtual.user'
     _description = 'Virtual User'
 
-    name = fields.Char('Nombre', required=True)
-    password = fields.Char('Contraseña', required=True)
+    name = fields.Char('Name', required=True)
+    password = fields.Char('Password', required=True)
 
     @api.model
     def generate_user_password(self):
@@ -21,8 +21,7 @@ class VirtualUser(models.Model):
                     data = response.json()
                     new_password = data.get('password', '')
 
-                    user_name = self.env['ir.sequence'].next_by_code('virtual.user') or 'Usuario'
-                    print(user_name)
+                    user_name = self.env['ir.sequence'].next_by_code('virtual.user') or 'New'
                     
                     user_vals = {
                         'name': user_name,
@@ -34,9 +33,9 @@ class VirtualUser(models.Model):
                     if not existing_user:
                         self.env['res.users'].create(user_vals)
                     else:
-                        print(f'Usuario con login {user_vals["login"]} ya existe. No se creó duplicado.')
+                        print(f'User with login {user_vals["login"]} already exists. Duplicate not created.')
                 else:
-                    print(f'Error al obtener la nueva contraseña. Código de estado: {response.status_code}')
+                    print(f'Error fetching the new password. Status code: {response.status_code}')
 
         except Exception as e:
-            print(f'Error de conexión: {str(e)}')
+            print(f'Connection error: {str(e)}')
