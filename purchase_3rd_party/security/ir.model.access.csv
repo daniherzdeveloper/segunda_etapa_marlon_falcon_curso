@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_3rd_party,purchase.3rd.party,model_purchase_3rd_party,,1,1,1,1
+access_purchase_3rd_party_line,purchase.3rd.party.line,model_purchase_3rd_party_line,,1,1,1,1
+access_purchase_3rd_party_stock_line,purchase.3rd.party.stock.line,model_purchase_3rd_party_stock_line,,1,1,1,1

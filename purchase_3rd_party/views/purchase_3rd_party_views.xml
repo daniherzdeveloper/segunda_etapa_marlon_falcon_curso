@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_purchase_3rd_party" model="ir.ui.view">
+        <field name="name">view.form.purchase.3rd.party</field>
+        <field name="model">purchase.3rd.party</field>
+        <field name="arch" type="xml">
+            <form string="Purchase 3rd Party">
+
+                 <header>
+
+
+                     <button name="exe_done" string="To Done" class="oe_highlight" type="object"
+                            attrs="{'invisible': [('state','not in',('draft'))]}"/>
+
+
+                     <button name="exe_to_pay" string="To Pay" class="oe_highlight" type="object"
+                            attrs="{'invisible': [('state','not in',('done'))]}"/>
+
+
+                     <button name="exe_pay" string="Pay" class="oe_highlight" type="object"
+                            attrs="{'invisible': [('state','not in',('to-pay'))]}"/>
+
+
+                     <button name="exe_draft" string="Draft" type="object"
+                            attrs="{'invisible': [('state','not in',('cancel'))]}"/>
+
+                     <button name="exe_cancel" string="Cancel" type="object"
+                            attrs="{'invisible': [('state','in',('cancel'))]}"/>
+
+
+                    <field name="state" widget="statusbar"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                        <group>
+                            <group>
+                                <field name="partner_id"
+                                       attrs="{'readonly': [('state','not in',('draft'))]}"
+                                />
+                                <field name="company_partner_id"
+                                        domain="[('is_3rd_party','=',True)]"
+
+                                        attrs="{'readonly': [('state','not in',('draft'))]}"
+                                />
+
+                                <field name="ref"
+                                       attrs="{'readonly': [('state','not in',('draft'))]}"
+                                />
+                            </group>
+                            <group>
+                                <field name="date_order"
+                                       attrs="{'readonly': [('state','not in',('draft'))]}"
+                                />
+                                <field name="currency_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                        </group>
+
+
+
+                    <notebook>
+                        <page name="line" string="Line">
+                            <field name="line_ids"
+                                   attrs="{'readonly': [('state','not in',('draft'))]}">
+                                <tree string="Lines"
+                                      decoration-danger="product_qty != received_qty"
+                                      editable="bottom">
+                                    <field name="name" required="1"/>
+                                    <field name="product_qty" sum="sum" required="1" optional="show"/>
+                                    <field name="received_qty" sum="sum" readonly="1" optional="hide"/>
+                                    <field name="product_uom" required="1" optional="show"/>
+                                    <field name="price_unit" required="1" optional="show"/>
+
+                                    <field name="tax_ids"
+                                           widget="many2many_tags"
+                                           optional="show"/>
+                                    <field name="price_subtotal" sum="sum" required="1" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="stock" string="Stock">
+                            <button name="exe_received_all" string="Received All" class="oe_highlight" type="object"
+                                    attrs="{'invisible': [('state','in',('draft'))]}"/>
+
+                            <field name="line_stock_ids">
+                                <tree string="Lines" editable="bottom">
+                                    <field name="name" required="1"/>
+                                    <field name="product_qty" sum="sum" required="1" optional="show"/>
+                                    <field name="user_id" required="1" optional="show"/>
+                                    <field name="date" required="1" optional="show"/>
+                                    <field name="note" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="info" string="info">
+                            <group>
+                                <group>
+                                    <field name="company_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                    <field name="user_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                    <field name="state_stock"/>
+                                </group>
+                            </group>
+                        </page>
+                     </notebook>
+                    <field name="description" placeholder="Add an internal note..." nolabel="1" height="50"/>
+                    <group>
+                            <group>
+
+                            </group>
+                            <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_net" nolabel="0" colspan="2" readonly="1"/>
+                                    <field name="tax_amount" nolabel="0" colspan="2" readonly="1"/>
+                                    <field name="amount_total" nolabel="0" colspan="2" readonly="1"/>
+                            </group>
+                        </group>
+
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_purchase_3rd_party" model="ir.ui.view">
+        <field name="name">view.tree.purchase.3rd.party</field>
+        <field name="model">purchase.3rd.party</field>
+        <field name="arch" type="xml">
+            <tree
+                delete="0"
+                decoration-danger="state == 'draft'"
+                decoration-muted="state == 'cancel'"
+            >
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="company_partner_id"/>
+                <field name="ref"/>
+                <field name="company_id"/>
+                <field name="state_stock"/>
+
+                <field name="amount_net" sum="sum"/>
+                <field name="tax_amount"  sum="sum"/>
+                <field name="amount_total"  sum="sum"/>
+
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_purchase_3rd_party" model="ir.actions.act_window">
+        <field name="name">Purchase 3rd party</field>
+        <field name="res_model">purchase.3rd.party</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+            Create a new record</p>
+        </field>
+    </record>
+
+</odoo>

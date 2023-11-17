@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_res_partner_3rd_form" model="ir.ui.view">
+        <field name="name">view.res.partner.3rd.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_3rd_party" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

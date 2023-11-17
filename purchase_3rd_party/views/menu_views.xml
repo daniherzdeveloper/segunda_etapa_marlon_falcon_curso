@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+       <menuitem id="purchase_3rd_party_root_menu"
+            name="Purchase 3rd Party"
+            web_icon="purchase_3rd_party,static/description/icon.png"
+            groups="purchase.group_purchase_user"
+            sequence="4">
+
+              <menuitem id="purchase_3rd_party_order"
+                name="3rd Order"
+                groups="purchase.group_purchase_user"
+                sequence="1">
+
+                     <menuitem id="purchase_3rd_party_order_two"
+                              name="3rd Order"
+                              action="action_purchase_3rd_party"
+                              groups="purchase.group_purchase_user"
+                              sequence="1"/>
+              </menuitem>
+       </menuitem>
+
+</odoo>
