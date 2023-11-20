@@ -54,6 +54,15 @@ class Purchase3rdParty(models.Model):
     user_id = fields.Many2one('res.users', string='User', index=True, tracking=3, default=lambda self: self.env.user)
     description = fields.Text(string='Description')
 
+    report_footer = fields.Char(string='Report Footer', compute='_compute_report_footer', store=True)
+
+    @api.depends('company_partner_id.email', 'company_partner_id.phone')
+    def _compute_report_footer(self):
+        for record in self:
+            email = record.company_partner_id.email or ''
+            phone = record.company_partner_id.phone or ''
+            record.report_footer = f'{phone} | {email}'
+
     def _compute_state_stock(self):
         state = 'no'
         len_lines = len(self.line_ids)

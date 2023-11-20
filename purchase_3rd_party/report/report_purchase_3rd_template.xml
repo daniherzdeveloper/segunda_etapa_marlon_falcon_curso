@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <template id="external_layout_purchase_3rd_standard">
+            <div t-attf-class="header o_company_#{o.company_partner_id.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-if="o.company_partner_id.image_1920" t-att-src="image_data_uri(o.company_partner_id.image_1920)" style="max-height: 45px;" alt="Logo"/>
+                    </div>
+                    <!-- <div class="col-9 text-end" style="margin-top:22px;" t-field="o.company_id.report_header" name="moto"/> -->
+                </div>
+                <div t-if="o.company_partner_id.image_1920 or o.company_id.report_header" class="row zero_min_height">
+                    <div class="col-12">
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" name="company_partner_address">
+                        <ul class="list-unstyled">
+                            <li><t t-esc="o.company_partner_id.name"/></li>
+                            <li><t t-esc="o.company_partner_id.country_id.name"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="pt-5">
+                    <!-- This div ensures that the address is not cropped by the header. -->
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-out="0"/>
+            </div>
+            
+            <div t-attf-class="footer o_standard_footer o_company_#{o.company_id.id}_layout">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <div t-field="o.report_footer"/>
+                    </ul>
+
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        <span t-field="o.company_partner_id.name"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="external_layout_3rd">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="purchase_3rd_party.external_layout_purchase_3rd_standard"><t t-out="0"/></t>
+        </template>    
+        
+    
+    </data>
+    
+
+</odoo>

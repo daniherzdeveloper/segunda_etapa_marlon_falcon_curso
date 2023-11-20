@@ -36,6 +36,7 @@
         'data/ir_sequence.xml',
         'views/res_partner_views.xml',
         'report/report_purchase_3rd_party.xml',
+        'report/report_purchase_3rd_template.xml',
     ],
     'images': ['static/description/banner.jpg'],
 }
