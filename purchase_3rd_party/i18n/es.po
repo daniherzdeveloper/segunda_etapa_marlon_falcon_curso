@@ -4,18 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 10:41+0000\n"
-"PO-Revision-Date: 2023-11-17 11:47+0100\n"
+"POT-Creation-Date: 2023-11-20 19:41+0000\n"
+"PO-Revision-Date: 2023-11-20 19:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: purchase_3rd_party
 #: model:ir.ui.menu,name:purchase_3rd_party.purchase_3rd_party_order
@@ -24,39 +22,89 @@ msgid "3rd Order"
 msgstr "Orden de 3ro"
 
 #. module: purchase_3rd_party
-#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_report
-msgid "<strong>Fecha:</strong>"
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<span class=\"text-nowrap\">IVA 22%</span>"
 msgstr ""
 
 #. module: purchase_3rd_party
-#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_report
-msgid "<strong>Secuencia:</strong>"
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Amount</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha de la Orden:</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Purchase Representative:</strong>"
+msgstr "<strong>Representante de Compra:</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Received</strong>"
+msgstr "<strong>Recibido</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío:</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Tax base</strong>"
+msgstr "<strong>Base Imponible</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Impuestos</strong>"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Total</strong>"
 msgstr ""
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Precio por Unidad</strong>"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Accion Necesaria"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoración de excepción de actividad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estado de Actividad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono de tipo de Actividad"
 
 #. module: purchase_3rd_party
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
@@ -66,12 +114,7 @@ msgstr "Agregar notas …"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
-
-#. module: purchase_3rd_party
-#: model:ir.model,name:purchase_3rd_party.model_res_partner
-msgid "Bim Partner "
-msgstr ""
+msgstr "Recuento de Archivos Adjuntos"
 
 #. module: purchase_3rd_party
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
@@ -84,9 +127,14 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "Cancelled Purchase Order #"
+msgstr "Orden de Compra Cancelada"
+
+#. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__name
 msgid "Code"
-msgstr ""
+msgstr "Codigo"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__company_id
@@ -99,23 +147,28 @@ msgid "Company 3ro"
 msgstr "Compañía 3ro"
 
 #. module: purchase_3rd_party
+#: model:ir.model,name:purchase_3rd_party.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: purchase_3rd_party
 #: model_terms:ir.actions.act_window,help:purchase_3rd_party.action_purchase_3rd_party
 msgid "Create a new record"
-msgstr ""
+msgstr "Crear Nuevo Rejistro "
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__create_uid
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__create_uid
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__create_date
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__create_date
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__currency_id
@@ -125,40 +178,40 @@ msgstr "Moneda"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__date
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__description
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__display_name
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__display_name
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para mostrar"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state__done
 msgid "Done"
-msgstr ""
+msgstr "Hecho"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state__draft
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__activity_type_icon
@@ -168,7 +221,7 @@ msgstr ""
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene Mensajes"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__id
@@ -180,23 +233,23 @@ msgstr ""
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__message_has_error
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_res_partner__is_3rd_party
@@ -207,96 +260,97 @@ msgstr "Es Proveedor 3ro"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party____last_update
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line____last_update
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima Modificación el"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__write_uid
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__write_uid
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultima Actualización por"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__write_date
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__write_date
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultima Actualización en"
 
 #. module: purchase_3rd_party
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "Line"
-msgstr ""
+msgstr "Linea"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__line_ids
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "Lines"
-msgstr ""
+msgstr "Lineas"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__line_stock_ids
 msgid "Lines Stock"
+msgstr "Lineas de Existencias"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.external_layout_purchase_3rd_standard
+msgid "Logo"
 msgstr ""
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adjunto Principal"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Error en la entrega del mensaje"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Fecha límite de mi actividad"
 
 #. module: purchase_3rd_party
 #. odoo-python
 #: code:addons/purchase_3rd_party/models/purchase_3rd_party.py:0
+#: code:addons/purchase_3rd_party/models/purchase_3rd_party.py:0
 #, python-format
 msgid "New"
-msgstr ""
-
-#. module: purchase_3rd_party
-#: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Nuevo"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite para la próxima actividad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de la próxima actividad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Siguiente tipo de actividad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state_stock__no
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_stock_line__note
@@ -306,27 +360,32 @@ msgstr "Nota"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de Acciones"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Número de errores"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__message_needaction_counter
-msgid "Number of messages requiring action"
-msgstr ""
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción."
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__date_order
 msgid "Order Date"
 msgstr "Fecha orden"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.external_layout_purchase_3rd_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Página: <span class=\"page\"/> / <span class=\"topage\"/>"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state__paid
@@ -376,7 +435,12 @@ msgstr "Compras de 3ros"
 #. module: purchase_3rd_party
 #: model:ir.actions.report,name:purchase_3rd_party.act_purchase_3rd_party_report
 msgid "Purchase 3rd party *"
-msgstr ""
+msgstr "Compras de 3ros"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "Purchase Order #"
+msgstr "Orden de Compra #"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__product_qty
@@ -405,14 +469,24 @@ msgid "Reference"
 msgstr "Referencia"
 
 #. module: purchase_3rd_party
+#: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__report_footer
+msgid "Report Footer"
+msgstr "Pie de página del informe"
+
+#. module: purchase_3rd_party
+#: model_terms:ir.ui.view,arch_db:purchase_3rd_party.report_purchase_3rd_party_document
+msgid "Request for Quotation #"
+msgstr "Solicitud de presupuesto #"
+
+#. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario Responsable"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Error de Entrega de SMS"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__state
@@ -431,7 +505,7 @@ msgstr ""
 #. module: purchase_3rd_party
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "Stock"
-msgstr ""
+msgstr "Existencia"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__price_subtotal
@@ -456,18 +530,18 @@ msgstr "Impuestos"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party_line__tax_ids
 msgid "Taxes that apply on the base amount"
-msgstr ""
+msgstr "Impuestos que se aplican sobre el monto base"
 
 #. module: purchase_3rd_party
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "To Done"
-msgstr ""
+msgstr "Para Hecho"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state__to-pay
 #: model_terms:ir.ui.view,arch_db:purchase_3rd_party.view_form_purchase_3rd_party
 msgid "To Pay"
-msgstr ""
+msgstr "Para Pagado"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__amount_total
@@ -477,17 +551,17 @@ msgstr ""
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__amount_net
 msgid "Total Neto"
-msgstr "Total Neto"
+msgstr ""
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad de excepción registrada."
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__price_unit
 msgid "Unit Price"
-msgstr "Precio"
+msgstr "Precio por Unidad"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party_line__product_uom
@@ -503,12 +577,12 @@ msgstr "Usuario"
 #. module: purchase_3rd_party
 #: model:ir.model.fields,field_description:purchase_3rd_party.field_purchase_3rd_party__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes de Sitio Web"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields,help:purchase_3rd_party.field_purchase_3rd_party__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de Comunicación del Sitio Web"
 
 #. module: purchase_3rd_party
 #: model:ir.model.fields.selection,name:purchase_3rd_party.selection__purchase_3rd_party__state_stock__yes
